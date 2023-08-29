@@ -1,5 +1,6 @@
 import React from "react";
-import useLocalStorage from "./useLocalStorage"; // Adjust the path as needed
+import useLocalStorage from "./useLocalStorage";
+import "./styles.css"; // Make sure to adjust the path to your stylesheet
 
 const Header = () => {
   const [isDarkMode, setIsDarkMode] = useLocalStorage("darkMode", false);
@@ -12,9 +13,11 @@ const Header = () => {
     <div className={`ui fixed menu ${isDarkMode ? "inverted" : ""}`}>
       <div className="ui container center">
         <h2>MyShop</h2>
-        <button onClick={toggleDarkMode}>
-          Toggle Dark Mode: {isDarkMode ? "On" : "Off"}
-        </button>
+        <div className="button-container">
+          <button className="toggle-button" onClick={toggleDarkMode}>
+            Toggle Dark Mode: {isDarkMode ? "On" : "Off"}
+          </button>
+        </div>
       </div>
     </div>
   );
