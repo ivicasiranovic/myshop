@@ -1,28 +1,25 @@
 import { ActionTypes } from "../constants/actions-types";
-
-// Your reducer logic here
-
-const initialState = {
-  // Initial state properties
+const intialState = {
+  products: [],
 };
 
-const productReducer = (state = initialState, action) => {
-  switch (action.type) {
+export const productReducer = (state = intialState, { type, payload }) => {
+  switch (type) {
     case ActionTypes.SET_PRODUCTS:
-      // Handle SET_PRODUCTS action
-      return state;
-
-    case ActionTypes.SELECTED_PRODUCT:
-      // Handle SELECTED_PRODUCT action
-      return state;
-
-    case ActionTypes.REMOVE_SELECTED_PRODUCT:
-      // Handle REMOVE_SELECTED_PRODUCT action
-      return state;
-
+      return { ...state, products: payload };
     default:
       return state;
   }
 };
 
-export default productReducer;
+export const selectedProductsReducer = (state = {}, { type, payload }) => {
+  console.log(type);
+  switch (type) {
+    case ActionTypes.SELECTED_PRODUCT:
+      return { ...state, ...payload };
+    case ActionTypes.REMOVE_SELECTED_PRODUCT:
+      return {};
+    default:
+      return state;
+  }
+};
