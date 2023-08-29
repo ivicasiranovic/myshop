@@ -1,7 +1,8 @@
+/* styles.css or your preferred stylesheet */
 .button-container {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: center; /* Align items vertically */
+  gap: 10px; /* Add some space between elements */
   margin: 20px;
 }
 
@@ -9,10 +10,10 @@
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 8px 15px;
+  padding: 8px 15px; /* Slightly smaller padding */
   cursor: pointer;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 14px; /* Slightly smaller font size */
   transition: background-color 0.3s ease;
 }
 
