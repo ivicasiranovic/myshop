@@ -1,19 +1,19 @@
-/* styles.css or your preferred stylesheet */
 .button-container {
   display: flex;
-  align-items: center; /* Align items vertically */
-  gap: 10px; /* Add some space between elements */
-  margin: 20px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 .toggle-button {
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 8px 15px; /* Slightly smaller padding */
+  padding: 10px 15px;
   cursor: pointer;
   border-radius: 4px;
-  font-size: 14px; /* Slightly smaller font size */
+  font-size: 16px;
   transition: background-color 0.3s ease;
 }
 
