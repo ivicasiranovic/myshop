@@ -1,6 +1,6 @@
 import React from "react";
 import useLocalStorage from "./useLocalStorage";
-import "./styles.css"; // Make sure to adjust the path to your stylesheet
+import "./styles.css";
 
 const Header = () => {
   const [isDarkMode, setIsDarkMode] = useLocalStorage("darkMode", false);
