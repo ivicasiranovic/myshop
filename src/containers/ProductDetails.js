@@ -1,29 +1,35 @@
 import React, { useEffect } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import axios from "axios"; // Import axios for making API requests
+import { useParams } from "react-router-dom"; // Import useParams for getting URL parameters
+import { useDispatch, useSelector } from "react-redux"; // Import useDispatch and useSelector from React Redux
 import {
   selectedProduct,
   removeSelectedProduct,
-} from "../redux/actions/productActions";
+} from "../redux/actions/productActions"; // Import action creators
+
 const ProductDetails = () => {
-  const { productId } = useParams();
-  let product = useSelector((state) => state.product);
-  const { image, title, price, category, description } = product;
-  const dispatch = useDispatch();
+  const { productId } = useParams(); // Get the "productId" from the URL parameters
+  let product = useSelector((state) => state.product); // Get the selected product from the Redux store
+  const { image, title, price, category, description } = product; // Destructure properties from the selected product
+  const dispatch = useDispatch(); // Get the dispatch function from React Redux
+
   const fetchProductDetail = async (id) => {
     const response = await axios
       .get(`https://fakestoreapi.com/products/${id}`)
       .catch((err) => {});
-    dispatch(selectedProduct(response.data));
+    dispatch(selectedProduct(response.data)); // Dispatch the action to select the fetched product
   };
 
   useEffect(() => {
+    // Fetch product details when the component mounts or when productId changes
     if (productId && productId !== "") fetchProductDetail(productId);
+
+    // Clean up by removing the selected product when the component unmounts
     return () => {
-      dispatch(removeSelectedProduct());
+      dispatch(removeSelectedProduct()); // Dispatch the action to remove the selected product
     };
   }, [productId]);
+
   return (
     <div className="ui grid container">
       {Object.keys(product).length === 0 ? (

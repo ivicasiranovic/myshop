@@ -1,9 +1,9 @@
 import React from "react";
-import "./Footer.css";
-import { useTheme } from "../context/ThemeContext";
+import "./Footer.css"; // Import the CSS file for styling
+import { useTheme } from "../context/ThemeContext"; // Import the ThemeContext to access theme-related functionality
 
 function Footer() {
-  const { isDarkMode, toggleTheme } = useTheme();
+  const { isDarkMode, toggleTheme } = useTheme(); // Destructure isDarkMode and toggleTheme from the ThemeContext
 
   return (
     <footer className={`Footer ${isDarkMode ? "dark" : "light"}`}>
