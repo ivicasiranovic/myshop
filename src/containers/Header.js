@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div className={`ui fixed menu ${isDarkMode ? "inverted" : ""}`}>
       <div className="ui container center">
-        <h2>MyShop</h2>
+        <h2 className={isDarkMode ? "white-text" : ""}>MyShop</h2>
         <div className="button-container">
           <button className="toggle-button" onClick={toggleDarkMode}>
             Toggle Dark Mode: {isDarkMode ? "On" : "Off"}
