@@ -5,6 +5,7 @@ import Header from "./containers/Header";
 import Footer from "./containers/Footer";
 import "./App.css";
 import ProductDetails from "./containers/ProductDetails";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
         <Route path="/product/:productId" element={<ProductDetails />} />
         <Route path="*" element={<h1>404 Not Found!</h1>} />
       </Routes>
-      <Footer />
+      <ThemeProvider>
+        <Footer />
+      </ThemeProvider>
     </div>
   );
 }

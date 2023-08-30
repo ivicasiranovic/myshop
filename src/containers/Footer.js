@@ -1,11 +1,18 @@
 import React from "react";
-import "./Footer.css"; // You can style your footer using a separate CSS file
+import "./Footer.css";
+import { useTheme } from "../context/ThemeContext";
 
 function Footer() {
+  const { isDarkMode, toggleTheme } = useTheme();
+
   return (
-    <footer className="Footer">
-      {/* Your footer content goes here */}
-      <p>&copy; 2023 Your Company. All rights reserved.</p>
+    <footer className={`Footer ${isDarkMode ? "dark" : "light"}`}>
+      <div className="footer-content">
+        <p className="footer-text">&copy; 2023 MyStore. All rights reserved.</p>
+        <button className="theme-button" onClick={toggleTheme}>
+          Toggle Theme
+        </button>
+      </div>
     </footer>
   );
 }
