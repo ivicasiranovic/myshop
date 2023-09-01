@@ -21,7 +21,10 @@ Uniform Styling: Create a polished and visually appealing user interface with un
 Technology Stack:
 
 Front-end: React, Redux, Context, React Router
+
 API Requests: Axios
+
 State Management: Redux, React Context
+
 Styling: CSS, Uniform Styling
 
